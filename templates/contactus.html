@@ -1,0 +1,19 @@
+<ion-view view-title="Contact Us">
+    <ion-content>
+            <h2>Contact us</h2>
+            <div ng-show="dataLoaded" ng-repeat="x in contactus | filter:query | orderBy:orderProp">
+			
+				<h2>
+				 {{x.heading}} 
+				</h2>
+				
+                <span ng-if="x.address.length != 0" ng-bind-html="x.address | html"></span>
+                <span ng-if="x.phone.length != 0" ng-bind-html="x.phone | html"></span>
+                <span ng-if="x.fax.length != 0" ng-bind-html="x.fax | html"></span>
+                <span ng-if="x.email.length != 0" ng-bind-html="x.email | html"></span>
+                
+                <span ng-if="x.content.length != 0" ng-bind-html="x.content | html"></span>
+
+        </div>
+    </ion-content>
+</ion-view>
